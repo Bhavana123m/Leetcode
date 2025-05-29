@@ -11,14 +11,22 @@ class Solution(object):
         :type targetSum: int
         :rtype: bool
         """
-        total = 0
-        return self.path_sum(root, targetSum, total)
-        
-    def path_sum(self, root, targetSum, total):
-        if root is None:
+        if not root:
             return False
-        if root.left is None and root.right is None:
-            total += root.val
-            if total == targetSum:
-                return True
-        return self.path_sum(root.left, targetSum, total + root.val) or self.path_sum(root.right, targetSum, total + root.val)
+        if not root.left and not root.right:
+            return targetSum==root.val
+        suml=self.hasPathSum(root.left,targetSum-root.val)
+        sumr=self.hasPathSum(root.right,targetSum-root.val)
+        return suml or sumr
+
+    #     total = 0
+    #     return self.path_sum(root, targetSum, total)
+        
+    # def path_sum(self, root, targetSum, total):
+    #     if root is None:
+    #         return False
+    #     if root.left is None and root.right is None:
+    #         total += root.val
+    #         if total == targetSum:
+    #             return True
+    #     return self.path_sum(root.left, targetSum, total + root.val) or self.path_sum(root.right, targetSum, total + root.val)
