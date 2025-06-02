@@ -5,27 +5,27 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    # Space Complexity - O(1) for sorted_arr and Time Complexity - O(n)
-    def kthSmallest(self, root, k):
-        """
-        :type root: Optional[TreeNode]
-        :type k: int
-        :rtype: int
-        """
-        count = 0
-        value = -1
-        self.inOrder(root, count, value, k)
-        return value
+    # # Space Complexity - O(1) for sorted_arr and Time Complexity - O(n)
+    # def kthSmallest(self, root, k):
+    #     """
+    #     :type root: Optional[TreeNode]
+    #     :type k: int
+    #     :rtype: int
+    #     """
+    #     count = 0
+    #     value = -1
+    #     self.inOrder(root, count, value, k)
+    #     return value
     
-    def inOrder(self, root, count, value, k):
-        if not root:
-            return
-        self.inOrder(root.left, count, value, k)
-        count+=1
-        if count == k:
-            value = root.val
-            return
-        self.inOrder(root.right, count, value, k)
+    # def inOrder(self, root, count, value, k):
+    #     if not root:
+    #         return
+    #     self.inOrder(root.left, count, value, k)
+    #     count+=1
+    #     if count == k:
+    #         value = root.val
+    #         return
+    #     self.inOrder(root.right, count, value, k)
 
     # Space Complexity - O(n) for sorted_arr and Time Complexity - O(n)
     def kthSmallest(self, root, k):
