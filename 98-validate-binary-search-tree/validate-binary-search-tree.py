@@ -11,21 +11,6 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
-
-        # q = [root]
-        # while q:
-        #     node = q.pop()
-        #     # print(node)
-        #     if node.left:
-        #         if node.left.val > node.val or node.left.val == node.val:
-        #             return False
-        #         q.append(node.left)
-        #     if node.right:
-        #         if node.val > node.right.val or node.val == node.right.val:
-        #             return False
-        #         q.append(node.right)
-        
-        # return True
         return self._isValidBST(root, -math.inf, math.inf)
 
     def _isValidBST(self, node, min, max):
