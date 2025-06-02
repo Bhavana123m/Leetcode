@@ -11,16 +11,17 @@ class Solution(object):
         :rtype: List[str]
         """
         result = []
-        def dfs(node, path):
-            if node:
-                path += str(node.val)
-                if not node.left and not node.right:
-                    result.append(path)
-                else:
-                    path += '->'
-                    dfs(node.left, path)
-                    dfs(node.right, path)
-
-        dfs(root, "")
+        result = []
+        self._dfs(root, "", result)
         return result
+
+    def _dfs(self, node, path, result):
+        if node:
+            path += str(node.val)
+            if not node.left and not node.right:
+                result.append(path)
+            else:
+                path += '->'
+                self._dfs(node.left, path, result)
+                self._dfs(node.right, path, result)
         
