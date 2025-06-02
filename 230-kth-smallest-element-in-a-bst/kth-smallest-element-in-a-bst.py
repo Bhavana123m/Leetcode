@@ -27,6 +27,22 @@ class Solution(object):
     #         return
     #     self.inOrder(root.right, count, value, k)
 
+    def kthSmallest(self, root, k):
+        """
+        :type root: Optional[TreeNode]
+        :type k: int
+        :rtype: int
+        """
+        ans=[]
+        def inorder(node):
+            if not node:
+                return
+            inorder(node.left)
+            ans.append(node.val)
+            inorder(node.right)
+        inorder(root)
+        return ans[k-1]
+
     # Space Complexity - O(n) for sorted_arr and Time Complexity - O(n)
     def kthSmallest(self, root, k):
         """
