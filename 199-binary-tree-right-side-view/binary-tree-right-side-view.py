@@ -23,7 +23,6 @@ class Solution(object):
                 if node.left:
                     q.append(node.left)
                 level.append(node.val)
-                print(level)
             arr.append(level.pop(0))
         return arr
         
