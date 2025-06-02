@@ -11,19 +11,23 @@ class Solution(object):
         :type subRoot: Optional[TreeNode]
         :rtype: bool
         """
-        if not root:
-            return False
-        if root == subRoot:
-            return True
-        if self.isSameTree(root, subRoot):
-            return True
-        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+        def convert(p):
+                return "^" + str(p.val) + convert(p.left) + convert(p.right) if p else "$"
+            
+        return convert(subRoot) in convert(root)
+    #     if not root:
+    #         return False
+    #     if root == subRoot:
+    #         return True
+    #     if self.isSameTree(root, subRoot):
+    #         return True
+    #     return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
-    def isSameTree(self, s, t):
-        if not s and not t:
-            return True
-        if not s or not t:
-            return False
-        if s.val != t.val:
-            return False
-        return self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
+    # def isSameTree(self, s, t):
+    #     if not s and not t:
+    #         return True
+    #     if not s or not t:
+    #         return False
+    #     if s.val != t.val:
+    #         return False
+    #     return self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
