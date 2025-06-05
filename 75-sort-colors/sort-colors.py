@@ -22,4 +22,3 @@ class Solution(object):
         for _ in range(ct):
             nums[index]=2
             index+=1
-        return nums
