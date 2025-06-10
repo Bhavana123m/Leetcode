@@ -10,6 +10,8 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
+
+
         result = []
         if not root:
             return result
