@@ -16,6 +16,7 @@ class Solution(object):
         q = [root]
         height = 0
         count = 0
+        left_to_right = True
         while q:
             level = []
             count +=1
@@ -28,8 +29,10 @@ class Solution(object):
                     q.append(node.right)
                 level.append(node.val)
                 q_len-=1
-            if count % 2 == 0:
+            
+            if not left_to_right:
                 level.reverse()
             result.append(level)
+            left_to_right = not left_to_right
 
         return result
