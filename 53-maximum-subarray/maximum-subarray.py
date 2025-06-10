@@ -4,8 +4,7 @@ class Solution:
         total = 0
         for i in range(len(nums)):
             total+=nums[i]
-            if total>ans:
-                ans = total
+            ans = max(total,ans)
             if total<0:
                 total = 0
         return ans
