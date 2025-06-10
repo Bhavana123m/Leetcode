@@ -10,6 +10,43 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
+        result = []
+        if not root:
+            return result
+        q = [root]
+        while q:
+            level = []
+            q_len = len(q)
+            while q_len:
+                value = q.pop(0)
+                if value.left:
+                    q.append(value.left)
+                if value.right:
+                    q.append(value.right)
+                level.append(value.val)
+                q_len-=1
+            result.append(level)
+        return result
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         arr = []
         if root is None:
             return arr
