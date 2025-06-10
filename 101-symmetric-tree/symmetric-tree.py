@@ -10,6 +10,19 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
+        
+        def isMirror(t1, t2):
+            if not t1 and not t2:
+                return True
+            if not t1 or not t2:
+                return False
+            return (t1.val == t2.val and 
+                    isMirror(t1.left, t2.right) and 
+                    isMirror(t1.right, t2.left))
+        
+        return isMirror(root, root)
+
+        
         if not root:
             return True
         q = [root]
@@ -24,7 +37,6 @@ class Solution(object):
                     q.append(node.right)
                 else:
                     level.append(None)
-                # level.append(node.val)
                 q_len -= 1
             if level != level[::-1]:
                 return False
