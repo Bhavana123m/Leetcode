@@ -10,6 +10,41 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[int]
         """
+        def inorder(result, root):
+            if root is None:
+                return
+            inorder(result, root.left)
+            result.append(root.val)
+            inorder(result, root.right)
+        result = []
+        if not root:
+            return result
+        inorder(result, root)
+        return result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         arr = []
         if root is None:
             return arr
