@@ -11,18 +11,13 @@ class Solution(object):
         :rtype: Optional[TreeNode]
         """
         
-        def createNode(nums, start, end):
+        def createNode(start, end):
             if start> end:
                 return
             mid = (start + end) // 2
             root = TreeNode(nums[mid])
-            root.left = createNode(nums, start, mid-1)
-            root.right = createNode(nums, mid+1, end)
+            root.left = createNode(start, mid-1)
+            root.right = createNode(mid+1, end)
             return root
         
-        if not nums:
-            return None
-        start = 0
-        nums_len = len(nums)
-        end = nums_len - 1
-        return createNode(nums, start, end)
+        return createNode(0, len(nums)-1)
