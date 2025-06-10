@@ -18,12 +18,12 @@ class Solution(object):
             level = []
             q_len = len(q)
             while q_len:
-                value = q.pop(0)
-                if value.left:
-                    q.append(value.left)
-                if value.right:
-                    q.append(value.right)
-                level.append(value.val)
+                node = q.pop(0)
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+                level.append(node.val)
                 q_len-=1
             result.append(level)
         return result
