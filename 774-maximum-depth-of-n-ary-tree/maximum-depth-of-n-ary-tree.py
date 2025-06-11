@@ -16,6 +16,17 @@ class Solution(object):
             return 0
         if not root.children:
             return 1
+        depth = 0
+        for child in root.children:
+            depth = max(depth, self.maxDepth(child))
+        return depth+1
+
+
+
+        if not root:
+            return 0
+        if not root.children:
+            return 1
         heights = []
         for node in root.children:
             heights.append(self.maxDepth(node))
