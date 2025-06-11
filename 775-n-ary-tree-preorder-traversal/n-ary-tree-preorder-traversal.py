@@ -14,6 +14,23 @@ class Solution(object):
         """
         if not root:
             return []
+        stack = [root]
+        res = []
+        while stack:
+            node = stack.pop()
+            res.append(node.val)
+            stack.extend(node.children[::-1])
+        return res
+
+
+
+
+
+
+
+
+        if not root:
+            return []
         arr = [root.val]
         for child in root.children:
             arr += self.preorder(child)
