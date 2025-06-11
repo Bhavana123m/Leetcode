@@ -22,8 +22,5 @@ class Solution(object):
             if abs(left_height - right_height) > 1:
                 return -1
             return 1 + max(left_height, right_height)
-
-        if not root:
-            return True
         
         return height_check(root)!=-1
