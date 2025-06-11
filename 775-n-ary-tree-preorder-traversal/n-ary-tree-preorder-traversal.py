@@ -14,6 +14,17 @@ class Solution(object):
         """
         if not root:
             return []
+        arr = [root.val]
+        for child in root.children:
+            arr += self.preorder(child)
+        return arr
+        
+
+
+
+
+        if not root:
+            return []
         arr = []
         self.dfs(root, arr)
         return arr
