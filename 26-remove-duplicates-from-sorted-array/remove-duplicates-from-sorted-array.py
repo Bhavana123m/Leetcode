@@ -4,14 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        count = 0
-        seen = []
-        for i in nums:
-            if i not in seen:
-                seen.append(i)
-                count+=1
-        nums[:] = seen
-        return count
+        next = 1
+        for start in range(1, len(nums)):
+            if nums[start]!=nums[start-1]:
+                nums[next] = nums[start]
+                next+=1
+        return next
 
         
         
