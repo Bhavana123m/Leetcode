@@ -19,6 +19,5 @@ class Solution(object):
         while max_heap:
             _ , num = heapq.heappop(max_heap)
             result.append(num)
-        print(result)
         return result[:k]
         
