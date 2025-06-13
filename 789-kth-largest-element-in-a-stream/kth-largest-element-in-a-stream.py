@@ -8,7 +8,7 @@ class KthLargest(object):
         :type nums: List[int]
         """
         self.k = k
-        self.minHeap = []
+        self.nums = []
         for num in nums:
             self.add(num)
         
@@ -18,13 +18,13 @@ class KthLargest(object):
         :type val: int
         :rtype: int
         """
-        if len(self.minHeap) < self.k:
-            heapq.heappush(self.minHeap, val)
-        elif val > self.minHeap[0]:
+        if len(self.nums) < self.k:
+            heapq.heappush(self.nums, val)
+        elif val > self.nums[0]:
             # heapq.heapreplace(self.minHeap, val)
-            heapq.heappop(self.minHeap)
-            heapq.heappush(self.minHeap, val)
-        return self.minHeap[0]
+            heapq.heappop(self.nums)
+            heapq.heappush(self.nums, val)
+        return self.nums[0]
         
 
 
