@@ -13,7 +13,7 @@ class Solution(object):
             product*=num
         for i in range(len(nums)):
             if count_zeroes == 0:
-                nums[i] = product/nums[i]
+                nums[i] = product//nums[i]
             elif count_zeroes == 1:
                 if nums[i] == 0:
                     nums[i] = product
