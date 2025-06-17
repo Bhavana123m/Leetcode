@@ -19,7 +19,7 @@ class Solution(object):
         directions = [(-1,0), (0,1), (1,0), (0,-1)]
 
         while q:
-             print(q)
+            #  print(q)
              r,c,t = q.pop(0)
              time = max(time, t)
              for dr, dc in directions:
@@ -28,6 +28,7 @@ class Solution(object):
                     grid[nr][nc] = 2
                     q.append((nr, nc, t+1))
                     rot += 1
+
         if rot == fresh:
             return time
         return -1
