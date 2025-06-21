@@ -43,7 +43,8 @@ class LRUCache:
         elif len(self.cache) >= self.capacity:
             node = self.tail.prev
             self.remove(node)
-            self.cache.pop(node.key)   # del self.cache[lru.key]
+            del self.cache[node.key]
+            # self.cache.pop(node.key)   # del self.cache[node.key]
         newNode = Node(key, value)
         self.insert_start(newNode)
         self.cache[key] = newNode
