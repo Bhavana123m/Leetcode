@@ -18,9 +18,16 @@ class SnapshotArray(object):
         :type val: int
         :rtype: None
         """
+        # print(self.snaparray)
         if index >= self.length:
             return
-        self.snaparray[index].append((self.snap_id, val))  
+        # print(self.snaparray[index][0])
+        if self.snaparray[index][-1][0] == self.snap_id:
+            self.snaparray[index][-1] = (self.snap_id, val)
+        else:
+            self.snaparray[index].append((self.snap_id, val))
+        # It stores all the history and we don't need that to do our changes
+        # self.snaparray[index].append((self.snap_id, val))  
 
     def snap(self):
         """
@@ -38,6 +45,14 @@ class SnapshotArray(object):
         """
         list_snaps_index = self.snaparray[index]
         # print(list_snaps_index)
+        # # Now search for the snapid<= requested snap_id   This logic time exceed
+        # filtered = []
+        # for entry in list_snaps_index:
+        #     if entry[0] <= snap_id:
+        #         filtered.append(entry)
+        # # print(filtered)
+        # return filtered[-1][1]
+        # Directly gives the get value
         left = 0
         right = len(list_snaps_index)-1
         while left<=right:
