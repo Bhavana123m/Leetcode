@@ -9,6 +9,7 @@ class MyCircularQueue(object):
         self.size = 0
         self.head = 0
         self.tail = 0
+        self.last = 0
 
         
 
@@ -21,6 +22,7 @@ class MyCircularQueue(object):
             return False
         self.q[self.tail] = value
         self.size+=1
+        self.last = self.tail
         self.tail = (self.tail + 1)%self.k
         return True
         
@@ -50,7 +52,8 @@ class MyCircularQueue(object):
         """
         if self.isEmpty():
             return -1
-        return self.q[(self.tail - 1 + self.k) % self.k]
+        return self.q[self.last]
+        # return self.q[(self.tail - 1 + self.k) % self.k]
         
 
     def isEmpty(self):
