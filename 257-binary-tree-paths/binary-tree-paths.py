@@ -5,12 +5,57 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     def binaryTreePaths(self, root):
         """
         :type root: Optional[TreeNode]
         :rtype: List[str]
         """
-        result = []
         result = []
         self._dfs(root, "", result)
         return result
