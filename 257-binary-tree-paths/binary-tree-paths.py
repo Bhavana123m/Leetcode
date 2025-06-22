@@ -5,21 +5,20 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    # def binaryTreePaths(self, root):
-    #     def dfs(node, path, result):
-    #         if not node:
-    #             return
-    #         path.append(str(node.val))
-    #         if not node.left and not node.right:
-    #             result.append('->'.join(path))
-    #         else:
-    #             dfs(node.left, path, result)
-    #             dfs(node.right, path, result)
-    #         path.pop()  # Backtrack by removing the last element
-
-    #     result = []
-    #     dfs(root, [], result)
-    #     return result
+    def binaryTreePaths(self, root):
+        result = []
+        dfs(root,[],result)
+        def dfs(node, path, result):
+            if not node:
+                return
+            path.append(str(node.val)) 
+            if not node.left and not node.right:
+                result.append("->".join(path))
+            else:
+                dfs(node.left, path, result)
+                dfs(node.right, path, result)
+            path.pop()
+        return result
 
 
 
