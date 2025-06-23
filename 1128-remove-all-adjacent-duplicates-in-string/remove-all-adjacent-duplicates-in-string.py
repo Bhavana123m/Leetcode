@@ -6,6 +6,18 @@ class Solution(object):
         """
         unique =[]
         for char in s:
+            if unique and unique[-1] == char:
+                unique.pop()
+            else:
+                unique.append(char)
+        return "".join(unique)
+
+
+
+
+
+        unique =[]
+        for char in s:
             if not unique:
                 unique.append(char)
             else:
