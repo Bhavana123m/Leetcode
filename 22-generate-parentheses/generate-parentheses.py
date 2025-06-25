@@ -9,8 +9,8 @@ class Solution(object):
         # Backtrack — undo the last added character — to explore other possibilities 
         # to ensure that explore all paths efficiently without duplicating work or going into invalid branches
 
-        if n == 1:
-            return ["()"]
+        # if n == 1:
+        #     return ["()"]
         def generate(current, open_count, close_count, result):
             # Base case: if no more brackets left to add
             if open_count == 0 and close_count == 0:
