@@ -6,28 +6,38 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        s = []
+        stack = []
+        map ={')':'(', '}':'{',']':'['}
         for char in str:
-            if char in '[{(':
-                s.append(char)
-            else:
-                if len(s) == 0:
+            if char in map:
+                if not stack or map[char]!=stack.pop():
                     return False
-                else:
-                    if char == ')':
-                        if s[-1] == '(':
-                            s.pop()
-                        else:
-                            return False
-                    elif char == '}':
-                        if s[-1] == '{':
-                            s.pop()
-                        else:
-                            return False
-                    elif char == ']':
-                        if s[-1] == '[':
-                            s.pop()
-                        else:
-                            return False
-        return not s
+            else:
+                stack.append(char)
+        return len(stack) == 0
+            
+        # s = []
+        # for char in str:
+        #     if char in '[{(':
+        #         s.append(char)
+        #     else:
+        #         if len(s) == 0:
+        #             return False
+        #         else:
+        #             if char == ')':
+        #                 if s[-1] == '(':
+        #                     s.pop()
+        #                 else:
+        #                     return False
+        #             elif char == '}':
+        #                 if s[-1] == '{':
+        #                     s.pop()
+        #                 else:
+        #                     return False
+        #             elif char == ']':
+        #                 if s[-1] == '[':
+        #                     s.pop()
+        #                 else:
+        #                     return False
+        # return not s
         
