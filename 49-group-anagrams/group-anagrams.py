@@ -4,22 +4,22 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        if strs == [""] or len(strs)==1:
-            return [strs]
-        result_dict = defaultdict(list)
+        result_dict = {} 
+        
         for s in strs:
-            alph_arr = [0]*26
+            char_count = [0] * 26
             for c in s:
-                alph_arr[ord(c) -ord('a')]+=1
+                char_count[ord(c) - ord('a')] += 1
+
             key = ""
-            for i in range(0,26):
-                key += str(alph_arr[i])
-                key+='#'
-            result_dict[key].append(s)
-        result = []
-        for key in result_dict:
-            result.append(result_dict[key])
-        return result
+            for count in char_count:
+                key += str(count) + "#" 
+            if key in result_dict:
+                result_dict[key].append(s)
+            else:
+                result_dict[key] = [s]
+
+        return list(result_dict.values())
             
         
 
