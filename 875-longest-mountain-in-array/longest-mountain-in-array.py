@@ -4,29 +4,20 @@ class Solution(object):
         :type arr: List[int]
         :rtype: int
         """
-        n = len(arr)
-        if n<3:
+        if len(arr)<3:
             return 0
-        peak = 1
-        max_len = 0
-
-        while peak < n-1:
-            if arr[peak-1]<arr[peak]>arr[peak+1]:
-                start = peak-1
-                end = peak+1
-                while start > 0 and arr[start-1]<arr[start]:
+        max_dist = 0
+        peek = 1 # Peak is never first element so start from 2nd
+        # while arr:
+        while peek<len(arr):
+            if peek < len(arr)-1 and arr[peek-1]<arr[peek] > arr[peek+1]:
+                start = peek
+                end = peek
+                while start>0 and arr[start]>arr[start-1]:
                     start-=1
-                while end < n-1 and arr[end]> arr[end+1]:
+                while end< len(arr)-1 and arr[end]>arr[end+1]:
                     end+=1
-                max_len = max(max_len, end-start+1)
-
-                peak = end
-
-            else:
-                peak+=1
-        
-        return max_len
-
-
+                max_dist = max(max_dist, end - start+1)
+            peek+=1
+        return max_dist
             
-
