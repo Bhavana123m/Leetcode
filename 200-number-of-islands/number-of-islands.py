@@ -22,7 +22,6 @@ class Solution(object):
         for row in range(rows):
             for col in range(cols):
                 if grid[row][col] == '1':
-                    print("Hi")
                     count+=1
                     dfs(row, col)
         return count
