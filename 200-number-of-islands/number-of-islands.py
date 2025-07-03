@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         if not grid:
-            return grid
+            return 0
         rows = len(grid)
         cols = len(grid[0])
         count = 0
