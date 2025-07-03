@@ -9,6 +9,126 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        dummy =ListNode(0)
+        dummy.next = head
+        prev = dummy
+        while head and head.next:
+            first = head
+            second = head.next
+            prev.next = second
+            first.next = second.next
+            second.next = first
+            prev = first
+            head = first.next
+
+        return dummy.next
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         dummy = prev = ListNode(0)
         prev.next = head
         while prev.next and prev.next.next:
