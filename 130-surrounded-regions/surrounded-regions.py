@@ -24,6 +24,8 @@ class Solution(object):
         directions = [(-1,0),(1,0),(0,-1),(0,1)]
         while queue:
             row, col = queue.popleft()
+            if board[row][col] != 'O':
+                continue
             board[row][col] = '#'
             for dr, dc in directions:
                 new_row =row+dr
