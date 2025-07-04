@@ -13,7 +13,7 @@ class Solution(object):
                 continue
             j = i+1
             k = n-1
-            while j<k :
+            while j<k:
                 sums = nums[i]+nums[j]+nums[k]
                 if sums>0:
                     k-=1
