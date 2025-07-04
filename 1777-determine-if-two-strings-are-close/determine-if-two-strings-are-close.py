@@ -12,7 +12,6 @@ class Solution(object):
         key2 = ""
         for c in word1:
             arr[ord(c)-ord('a')] += 1
-        print(arr)
         non_zero_indices_dict1 = {}
         for i in range(26):
             if arr[i]!=0:
