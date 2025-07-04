@@ -15,7 +15,6 @@ class Solution(object):
             node = lists[i]
             if node:
                 heapq.heappush(min_heap,(node.val, node))
-                # index+=1
         result = ListNode(0)
         current = result
         while min_heap:
@@ -24,5 +23,4 @@ class Solution(object):
             current = current.next
             if node.next:
                 heapq.heappush(min_heap,(node.next.val, node.next))
-                # index+=1
         return result.next
