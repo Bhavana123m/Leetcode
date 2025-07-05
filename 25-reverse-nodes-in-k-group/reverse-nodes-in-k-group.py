@@ -10,18 +10,20 @@ class Solution(object):
         :type k: int
         :rtype: Optional[ListNode]
         """
-        dummy = jump = ListNode(0)
-        dummy.next = l = r = head
-        
-        while True:
-            count = 0
-            while r and count < k:
-                r = r.next
-                count += 1
-            if count == k:
-                pre, cur = r, l
-                for _ in range(k):
-                    cur.next, cur, pre = pre, cur.next, cur
-                jump.next, jump, l = pre, l, r
-            else:
-                return dummy.next
+        stack = []
+        curr = head
+        dummy = ListNode(0)
+        tail = dummy
+
+        while curr:
+            while curr and len(stack) <k:
+                stack.append(curr)
+                curr = curr.next
+            if len(stack) == k:
+                while stack:
+                    node = stack.pop()
+                    tail.next = node
+                    tail = tail.next
+                tail.next = curr
+        return dummy.next
+            
