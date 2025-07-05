@@ -4,6 +4,106 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        length = 0
+        start = 0
+        visited = set()
+        for i in range(len(s)):
+            while s[i] in visited:
+                visited.remove(s[start])
+                start+=1
+            visited.add(s[i])
+            length = max(length, i-start+1)
+        return length
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         start = 0
         end = 0
         max_len = 0
