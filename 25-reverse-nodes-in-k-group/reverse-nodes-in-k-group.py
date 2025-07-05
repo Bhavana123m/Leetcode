@@ -19,11 +19,12 @@ class Solution(object):
             while curr and len(stack) <k:
                 stack.append(curr)
                 curr = curr.next
-            if len(stack) == k:
-                while stack:
-                    node = stack.pop()
-                    tail.next = node
-                    tail = tail.next
-                tail.next = curr
+            if len(stack) != k:
+                break
+            while stack:
+                node = stack.pop()
+                tail.next = node
+                tail = tail.next
+            tail.next = curr
         return dummy.next
             
