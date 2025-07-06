@@ -15,7 +15,8 @@ class Solution(object):
 
             if s in memo:
                 return memo[s]
-        
+            a = recurse(s[1:], memo)
+            memo[s[1:]] = a
             if len(s)>1 and int(s[:2])<27:
                 a = recurse(s[1:], memo)
                 b = recurse(s[2:], memo)
@@ -23,8 +24,7 @@ class Solution(object):
                 memo[s[2:]] = b
                 return a + b
             
-            a = recurse(s[1:], memo)
-            memo[s[1:]] = a
+            
             return a
             
         memo = {}
