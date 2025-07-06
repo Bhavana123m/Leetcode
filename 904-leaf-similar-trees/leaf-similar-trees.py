@@ -24,12 +24,11 @@ class Solution(object):
                 return False
         return True
 
-
     def postorder(self, node, leaf):
         if not node:
             return
+        self.postorder(node.left, leaf)
         if not node.left and not node.right:
             leaf.append(node.val)
-        self.postorder(node.left, leaf)
         self.postorder(node.right, leaf)
 
