@@ -10,6 +10,41 @@ class Solution(object):
         low = 0
         high = cols-1
         while low<rows and high>=0:
+            value  = matrix[low][high]
+            if value == target:
+                return True
+            elif value>target:
+                high-=1
+            else:
+                low+=1
+        return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        rows = len(matrix)
+        cols = len(matrix[0])
+        low = 0
+        high = cols-1
+        while low<rows and high>=0:
             if matrix[low][high]== target:
                 return True
             elif matrix[low][high]>target:
