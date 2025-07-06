@@ -17,8 +17,8 @@ class Solution(object):
         def maxsum(node, ans):
             if not node:
                 return ans, 0
-            ans, sum_left = max(maxsum(node.left, ans),0)
-            ans, sum_right = max(maxsum(node.right, ans),0)
+            ans, sum_left = maxsum(node.left, ans)
+            ans, sum_right = maxsum(node.right, ans)
             node_val = node.val
             sum_node_best_l_r = node_val + max(sum_left, sum_right)
             sum_node_path = node_val + sum_left + sum_right
