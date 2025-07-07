@@ -10,6 +10,92 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
+        if not root:
+            return True
+        def check_height(node):
+            if not node:
+                return 0
+            left_height = check_height(node.left)
+            if left_height == -1:
+                return -1
+            right_height = check_height(node.right)
+            if right_height == -1:
+                return -1
+            if abs(right_height-left_height)>1:
+                return -1
+            return 1+max(right_height, left_height)
+        
+        return check_height(root) != -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         def height_check(node):
             if not node:
                 return 0
