@@ -11,6 +11,54 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
+        # def builiterator(arr, node, stack):
+        #     if not node: 
+        #         return
+        #     while node.left:
+        #         stack.append(node)
+        #         node = node.left
+            
+
+            
+            
+
+        # stack = []
+        # arr = []
+        # st = builditerator(arr, root, stack)
+
+        def inorder_traversal(node, arr):
+            if not node:
+                return
+            
+            inorder_traversal(node.left, arr)
+            arr.append(node.val)
+            inorder_traversal(node.right, arr)
+
+        arr = []
+        inorder_traversal(root, arr) # Populate the array with sorted BST values
+
+        # Two-pointer approach on the sorted array
+        left = 0
+        right = len(arr) - 1
+
+        while left < right:
+            current_sum = arr[left] + arr[right]
+            if current_sum == k:
+                return True
+            elif current_sum < k:
+                left += 1
+            else: # current_sum > k
+                right -= 1
+        
+        return False
+
+
+
+
+
+
+
+
         seen = set()
         return self.find_seen(root, seen, k)
 
