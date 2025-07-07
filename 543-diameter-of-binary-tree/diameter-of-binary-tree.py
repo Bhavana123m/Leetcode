@@ -11,6 +11,95 @@ class Solution(object):
         :rtype: int
         """
         self.max_diameter = 0
+
+        def compute_depth(node):
+            if not node:
+                return 0
+            left_depth = compute_depth(node.left)
+            right_depth = compute_depth(node.right)
+            self.max_diameter = max(self.max_diameter, left_depth+right_depth)
+            return 1+max(left_depth, right_depth)
+
+        compute_depth(root)
+        return self.max_diameter
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        self.max_diameter = 0
         self.compute_depth(root)
         return self.max_diameter
     
