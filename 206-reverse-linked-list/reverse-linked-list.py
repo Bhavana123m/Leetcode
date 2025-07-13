@@ -9,6 +9,33 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        if not head:
+            return None   
+        prev = None
+        curr = head
+        while curr:
+            nextp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nextp
+        return prev
+
+
+        # prev = None
+        # curr = head
+        # # nextp = curr.next
+        # while curr:
+        #     nextp = curr.next
+        #     curr.next = prev
+        #     prev = curr
+        #     curr = nextp
+        # return prev
+
+
+
+
+
+
         dummy = ListNode(0)
         dummy.next = head
         curr = head
