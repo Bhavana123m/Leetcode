@@ -28,4 +28,6 @@ class Solution(object):
                 high= mid-1
             else:
                 low = mid+1
+        if result[0] == -1 or result[1] == -1 or result[0] > result[1]:
+            return [-1, -1]
         return result
