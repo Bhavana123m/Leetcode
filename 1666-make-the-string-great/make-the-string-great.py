@@ -8,7 +8,20 @@ class Solution(object):
         if n == 0 or n==1:
             return s
         stack = []
-        # list_s = list(s)
+
+        for i in s:
+            if stack and i!=stack[-1] and(i.lower() == stack[-1] or i.upper() == stack[-1]):
+                stack.pop()
+            else:
+                stack.append(i)
+        return ''.join(stack)
+
+
+
+        n = len(s)
+        if n == 0 or n==1:
+            return s
+        stack = []
         i = 0
         while i<n:
             while i<n and stack:
@@ -29,3 +42,4 @@ class Solution(object):
             i+=1
         return "".join(stack)
 
+        
