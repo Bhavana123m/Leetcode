@@ -4,9 +4,9 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        n = len(s)
-        if n == 0 or n==1:
-            return s
+        # n = len(s)
+        # if n == 0 or n==1:
+        #     return s
         stack = []
 
         for i in s:
