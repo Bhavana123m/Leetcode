@@ -4,6 +4,12 @@ class Solution(object):
         :type num: int
         :rtype: int
         """
+
+        if num == 0 : return 0
+        if num % 9 == 0 : return 9
+        else : return (num % 9)       
+
+        # recursion
         if num == 0 or num < 10:
             return num
         total = 0
