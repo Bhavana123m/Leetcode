@@ -5,6 +5,17 @@ class Solution(object):
         :type word2: str
         :rtype: str
         """
+        ans = ""
+        min_len = min(len(word1), len(word2))
+        for i in range(min_len):
+            ans += word1[i]
+            ans += word2[i]
+        if len(word1) > len(word2):
+            ans += word1[min_len:]
+        else:
+            ans += word2[min_len:]
+        return ans
+        
         result = ""
         left = 0
         size1 = len(word1)
