@@ -5,17 +5,17 @@ class Solution(object):
         :rtype: List[str]
         """
         result = []
-        i = 0
-        while i < len(nums):
-            start = i
-            while i + 1 < len(nums) and nums[i + 1] == nums[i] + 1:
-                i += 1
-            if start == i:
+        end = 0
+        while end < len(nums):
+            start = end
+            while end + 1 < len(nums) and nums[end + 1] == nums[end] + 1:
+                end += 1
+            if start == end:
                 result.append(str(nums[start]))
             else:
-                result.append(str(nums[start]) + "->" + str(nums[i]))
+                result.append(str(nums[start]) + "->" + str(nums[end]))
 
-            i += 1
+            end += 1
         return result
         
             
