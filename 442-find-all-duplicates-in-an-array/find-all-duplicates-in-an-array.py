@@ -15,14 +15,14 @@ class Solution(object):
 
 
 
-        arr = [0]*(len(nums)+1)
-        res = []
-        for num in nums:
-            if arr[num]>0:
-                res.append(num)
-            else:
-                arr[num]=1
-        return res
+        # arr = [0]*(len(nums)+1)
+        # res = []
+        # for num in nums:
+        #     if arr[num]>0:
+        #         res.append(num)
+        #     else:
+        #         arr[num]=1
+        # return res
         # result = []
         # prev = set()
         # for n in nums:
