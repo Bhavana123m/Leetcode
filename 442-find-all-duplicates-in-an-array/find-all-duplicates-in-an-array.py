@@ -9,8 +9,7 @@ class Solution(object):
             if nums[abs(num)-1]<0:
                 res.append(abs(num))
                 continue
-            else:
-                nums[abs(num)-1]*=-1
+            nums[abs(num)-1]*=-1
         return res
 
 
