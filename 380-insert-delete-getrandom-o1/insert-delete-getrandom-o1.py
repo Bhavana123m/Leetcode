@@ -36,7 +36,10 @@ class RandomizedSet:
         return True
 
     def getRandom(self):
-        return random.choice(self.arr)
+        rand_index = random.randint(0, len(self.arr) - 1)
+        return self.arr[rand_index]
+
+        # return random.choice(self.arr)
 
 # Your RandomizedSet object will be instantiated and called as such:
 # obj = RandomizedSet()
