@@ -5,7 +5,15 @@ class Solution(object):
         :rtype: int
         """
         n = len(nums)
-        actual_sum = sum(nums)
-        expected_sum = (n * (n+1))//2
-        return expected_sum - actual_sum
+        ans = 0
+        for num in nums:
+            ans^=num
+        for i in range(0, n+1):
+            ans^=i
+        return ans
+        
+        # n = len(nums)
+        # actual_sum = sum(nums)
+        # expected_sum = (n * (n+1))//2
+        # return expected_sum - actual_sum
         
