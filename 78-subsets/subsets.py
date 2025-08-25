@@ -4,10 +4,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        outer = [[]]
-        for num in nums:
-            n = len(outer)
-            for i in range(n):
-                internal = outer[i] + [num]
-                outer.append(internal)
-        return outer
+        self.nums = nums
+        subsets = []
+
+        self.backtrack(0, subsets, [])
+        return subsets
+    
+    def backtrack(self, index, subsets, curr):
+        subsets.append(curr[:])
+
+        for i in range(index, len(self.nums)):
+
+            curr.append(self.nums[i])
+            self.backtrack(i + 1, subsets, curr)
+            curr.pop()
