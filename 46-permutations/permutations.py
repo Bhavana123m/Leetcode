@@ -4,21 +4,39 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        used = [False] * len(nums)
         permutations = []
-
 
         def get_perm(permutaions, path):
             if len(path) == len(nums):
                 permutations.append(path[:])
                 return
             for i in range(len(nums)):
-                if nums[i] not in path:
-                    path.append(nums[i])
-                    get_perm(permutations, path)
-                    path.pop()
+                if used[i]:
+                    continue
+                used[i] = True
+                path.append(nums[i])
+                get_perm(permutations, path)
+                path.pop()
+                used[i] = False
 
         get_perm(permutations, [])
         return permutations
+        
+        # permutations = []
+
+        # def get_perm(permutaions, path):
+        #     if len(path) == len(nums):
+        #         permutations.append(path[:])
+        #         return
+        #     for i in range(len(nums)):
+        #         if nums[i] not in path:
+        #             path.append(nums[i])
+        #             get_perm(permutations, path)
+        #             path.pop()
+
+        # get_perm(permutations, [])
+        # return permutations
 
 
 
