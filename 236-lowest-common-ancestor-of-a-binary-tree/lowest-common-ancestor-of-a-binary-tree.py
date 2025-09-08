@@ -17,6 +17,34 @@ class Solution(object):
             return None
         if p.val == root.val or q.val == root.val:
             return root
+        left_tree_common = self.lowestCommonAncestor(root.left, p, q)
+        right_tree_common = self.lowestCommonAncestor(root.right, p, q)
+        if left_tree_common and right_tree_common:
+            return root
+        if left_tree_common:
+            return left_tree_common
+        if right_tree_common:
+            return right_tree_common
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if root is None:
+            return None
+        if p.val == root.val or q.val == root.val:
+            return root
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
         if left and right:
