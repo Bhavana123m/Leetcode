@@ -4,6 +4,32 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        # n = len(nums)
+        # left = 0
+        # right = n - 1
+        # fill_pos = n - 1  # position to fill from the end
+
+        # while left <= right:
+        #     if abs(nums[left]) > abs(nums[right]):
+        #         nums[fill_pos] = nums[left] * nums[left]
+        #         left += 1
+        #     else:
+        #         nums[fill_pos] = nums[right] * nums[right]
+        #         right -= 1
+        #     fill_pos -= 1
+
+        # return nums
+
+
+
+
+# class Solution(object):
+#     def sortedSquares(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         n = len(nums)
         n = len(nums)
         left = 0
         right = n-1
