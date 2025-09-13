@@ -15,10 +15,14 @@ class Solution(object):
             if op == 'start':
                 stack.append([id, time])
             else:
-                popped = stack.pop()
-                res[popped[0]] += time-popped[1]+1
+                processId, startTime = stack.pop()
+                timeSpent = time - startTime + 1 # Add 1 cause 0 is included
+                res[processId] += timeSpent
+                # Decrement time for next process in the stack
                 if stack:
-                    res[stack[-1][0]] -= time-popped[1]+1
+                    nextProcessId, timeSpentByNextProcess = stack[-1] #
+                    res[nextProcessId] -= timeSpent
+
 
         return res
 
