@@ -16,6 +16,27 @@ class Solution(object):
         """
         if not root:
             return root
+
+        leftmost = root
+        # Since it's a perfect binary tree, if leftmost has a left child,
+        # the level below is fully present.
+        while leftmost.left:
+            cur = leftmost
+            while cur:
+                # 1) Connect within the same parent
+                cur.left.next = cur.right
+                # 2) Connect across parents using current level's next
+                if cur.next:
+                    cur.right.next = cur.next.left
+                cur = cur.next
+            # Go down one level
+            leftmost = leftmost.left
+
+        return root
+
+
+        if not root:
+            return root
         q = deque()
         q.append(root)
         while q:
